@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- //// GENERAL //// -->
+
+    <string name="app_name">MapEver</string>
+
+    <!-- Actions and menu entries -->
+    <string name="action_settings">Einstellungen</string>
+    <string name="action_about">Über</string>
+    <string name="action_quick_help">Schnellhilfe</string>
+    <string name="action_debugmode_mockgps">(Debug) Mock GPS</string>
+    <string name="action_load_testmap">Testkarte laden</string>
+    <string name="action_load_testmap_short">Testkarte</string>
+    <string name="action_rename_map">Karte umbenennen</string>
+    <string name="action_show_corners">Mit/ohne Entzerrung</string>
+
+    <!-- Activity titles -->
+    <string name="title_activity_deskew">Bild entzerren</string>
+    <string name="title_activity_navigation">Navigation</string>
+    <string name="title_activity_settings">Einstellungen</string>
+
+    <!-- General error messages -->
+    <string name="general_error_title">Fehler</string>
+    <string name="error_outofmemory">Nicht genügend Speicher!</string>
+    <string name="error_filenotfound">Datei nicht gefunden!</string>
+    <string name="error_io">Fehler beim Lesen/Schreiben!</string>
+
+    <!-- //// START, LOAD MAP, NEW MAP //// -->
+    <!-- Kontextmenü -->
+    <string name="start_context_rename">Karte umbenennen</string>
+    <string name="start_context_rename_success">Karte wurde umbenannt!</string>
+    <string name="start_context_delete">Karte löschen</string>
+    <string name="start_context_delete_confirmation_msg">Wollen Sie diese Karte wirklich löschen?</string>
+
+    <!-- Start Help -->
+    <string name="start_help_text">Berühren Sie diesen Button, um eine neue Karte zu erstellen.</string>
+    <string name="start_help_text_2">Durch Tippen auf die Vorschaubilder können Sie eine zuvor erstellte Karte laden.</string>
+    <string name="start_desc_new_map">Buttons, mit dem neue Karten erstellt werden können</string>
+
+    <!-- New map popup -->
+    <string name="new_map_popup_header">Neue Karte erstellen aus&#8230;</string>
+    <string name="new_map_camera_label_text">Kamera</string>
+    <string name="new_map_filechooser_label_text">Galerie</string>
+    <string name="new_map_desc_camera">Button, um Foto zu machen</string>
+    <string name="new_map_desc_filechooser">Button, um Bild zu laden</string>
+    <string name="new_map_copy_error">Konnte Bilddatei nicht kopieren!</string>
+
+    <!-- //// CAMERA //// -->
+
+    <string name="camera_activity_desc_preview">Vorschaubild</string>
+    <string name="camera_activity_take_picture_button_txt">Foto machen</string>
+    <string name="camera_activity_confirm_button_txt">Bestätigen</string>
+    <string name="camera_activity_cancel_button_txt">Verwerfen</string>
+
+    <!-- //// DESKEWING //// -->
+
+    <string name="deskewing_loading">Entzerrung wird durchgeführt&#8230;</string>
+    <string name="deskewing_error_invalidcorners">Anordnung der Eckpunkte so nicht möglich!</string>
+    <string name="deskewing_error_deskewfailure">Entzerrung fehlgeschlagen!</string>
+    <string name="deskewing_imagetype_not_supported">Die Entzerrung wird für dieses Bildformat nicht unterstützt!</string>
+
+    <!-- ContentDescriptions of images -->
+    <string name="deskewing_desc_do_deskew">Button, der die Entzerrung ausführt</string>
+    <string name="deskewing_desc_continue">Button, der das entzerrte Bild akzeptiert</string>
+    <string name="deskewing_desc_corner_image">Bild eines Eckpunktes</string>
+
+    <!-- Help -->
+    <string name="deskewing_help_continue">Drücken Sie diesen Button, wenn Sie mit dem Ergebnis zufrieden sind, um zum nächsten Bildschirm fortzufahren.</string>
+    <string name="deskewing_help_corner_image">Wählen Sie mit diesen Kreuzen die Eckpunkte Ihrer Karte aus. Verschieben Sie die Kreuze per Drag and Drop.</string>
+    <string name="deskewing_help_crop">Drücken Sie diesen Button in der Action Bar, um die Eckpunkte ein-/auszublenden. Wenn die Eckpunkte sichtbar sind, drücken Sie diesen Button im unteren Bereich des Bildschirms, um das Bild zu entzerren.</string>
+
+    <!-- //// NAVIGATION //// -->
+
+    <string name="navigation_map_not_found">Die Karte konnte nicht geladen werden!</string>
+    <string name="navigation_image_not_found">Die Karte konnte nicht geladen werden, da die Bilddatei nicht gefunden wurde!</string>
+    <string name="navigation_gps_activation_popup_question">GPS aktivieren?</string>
+
+    <!-- Renaming the map -->
+    <string name="navigation_rename_map">Karte umbenennen</string>
+    <string name="navigation_rename_map_cancel">Zurück</string>
+    <string name="navigation_rename_map_rename">Umbenennen</string>
+
+    <!-- Toast texts -->
+    <string name="navigation_toast_refpoint_already_set_for_this_position">Für diese Position existiert bereits ein Referenzpunkt!</string>
+    <string name="navigation_toast_refpoint_out_of_boundaries">Außerhalb des Bildes kann kein Referenzpunkt gesetzt werden!</string>
+    <string name="navigation_toast_no_gpsfix_yet">Es sind noch keine aktuellen GPS-Koordinaten bekannt.</string>
+    <string name="navigation_toast_set_refpoint_prompt">Um Sie richtig orten zu können, werden noch %d Referenzpunkte benötigt!</string>
+
+    <!-- ContentDescriptions of images -->
+    <string name="navigation_desc_set_refpoint">Button zum Setzen von Referenzpunkten</string>
+    <string name="navigation_desc_accept_refpoint">Button zum Bestätigen des gesetzten Referenzpunkts</string>
+    <string name="navigation_desc_cancel_refpoint">Button zum Verwerfen des gesetzten Referenzpunkts</string>
+    <string name="navigation_desc_delete_refpoint">Button zum Löschen des ausgewählten Referenzpunkts</string>
+    <string name="navigation_desc_track_position">Button zur Aktivierung der Positionsverfolgung</string>
+    <string name="navigation_desc_location">Zeigt die aktuelle Position des Nutzers an.</string>
+    <string name="navigation_desc_refpoint">Dies ist ein Referenzpunkt.</string>
+
+    <!-- Help -->
+    <string name="navigation_help_set_refpoint">Drücken Sie diesen Button, um einen Referenzpunkt zu setzen.</string>
+    <string name="navigation_help_location">Dies markiert Ihre aktuelle Position auf der Karte.</string>
+    <string name="navigation_help_refpoint">Ein von Ihnen gesetzter Referenzpunkt.</string>
+    <string name="navigation_help_mark_refpoint">Bitte markieren Sie Ihre aktuelle Position auf der Karte.</string>
+    <string name="navigation_help_accept_refpoint">Drücken Sie diesen Button, um den von Ihnen gesetzten Referenzpunkt zu bestätigen.</string>
+    <string name="navigation_help_cancel_refpoint">Drücken Sie diesen Button, um den von Ihnen gesetzten Referenzpunkt zu verwerfen.</string>
+    <string name="navigation_help_delete_refpoint">Drücken Sie diesen Button, um den von Ihnen ausgewählten Referenzpunkt zu löschen.</string>
+
+    <!-- Constants -->
+    <string name="navigation_const_name_of_unnamed_maps">unbenannte Karte</string>
+
+    <!-- //// ABOUT //// -->
+    <string name="aboutus_title">MapEver</string>
+    <string name="aboutus_rights_reserved">Alle Rechte vorbehalten.</string>
+    <string name="aboutus_copyright">© 2015 MapEver Developer Group</string>
+    <string name="aboutus_lehrstuhl">Lehrstuhl für Technische Informatik</string>
+    <string name="aboutus_version">Version 1.0</string>
+    <string name="aboutus_project">Ein Semesterprojekt der Humboldt-Universität zu Berlin</string>
+
+    <!-- //// SETTINGS //// -->
+    <!-- Categories -->
+    <string name="pref_cat_general">Allgemein</string>
+    <string name="pref_cat_developers">Entwicklereinstellungen</string>
+
+    <!-- General: Quick help -->
+    <string name="pref_title_quick_help">Schnellhilfe</string>
+    <string name="pref_sum_quick_help_on">Ein Button zum Öffnen der Schnellhilfe wird in der Menüleiste anzeigt.</string>
+    <string name="pref_sum_quick_help_off">Die Hilfe kann über das Menü aufgerufen werden.</string>
+
+    <!-- General: Corner detection camera -->
+    <string name="pref_title_cdCamera">Kamera mit Eckenerkennung</string>
+    <string name="pref_sum_cdCamera_on">Eine Kamerafunktion mit Vorschau für die Eckenerkennung wird verwendet.</string>
+    <string name="pref_sum_cdCamera_off">Die Systemkamera wird verwendet (die Eckenerkennung findet ohne Vorschau statt).</string>
+
+    <!-- General: LIV Multitouch -->
+    <string name="pref_title_liv_multitouch">Entzerrung: Eckpunkt-Multitouch</string>
+    <string name="pref_sum_liv_multitouch_on">Mehrere Eckpunkte können gleichzeitig verschoben werden.</string>
+    <string name="pref_sum_liv_multitouch_off">Es kann immer nur eine Ecke gleichzeitig verschoben werden.</string>
+
+    <!-- Developers: Debug mode -->
+    <string name="pref_title_debugmode">Debug-Modus</string>
+    <string name="pref_sum_debugmode">Aktiviert den Debug-Modus. (Nur für Experten!)</string>
+
+    <!-- SUBMENU: LDM Options -->
+    <string name="pref_sub_ldm">Lokalisierung: Feinabstimmung</string>
+    <string name="pref_sub_ldm_sum">Parameter für den Lokalisierungsalgorithmus können hier angepasst werden. (Nur für Experten!)</string>
+
+    <!-- TODO LDM options......... -->
+
+
+    <!-- Developers: Git repository -->
+    <string name="pref_title_git_repo">Git-Repository</string>
+    <string name="pref_sum_git_repo">Öffnet das Git-Repository dieser App auf Github. TODO public repo!!</string>
+
+</resources>

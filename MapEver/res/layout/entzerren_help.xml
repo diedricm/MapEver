@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#AA000000"
+        android:contentDescription="@null" />
+
+    <ImageView
+        android:id="@+id/view_entzerren"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+      android:layout_marginBottom="50dp"
+        
+        android:contentDescription="@string/deskewing_desc_do_deskew"
+        android:src="@drawable/ic_action_crop" />
+
+    <TextView
+        android:id="@+id/text_entzerren"
+        android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/text_rect"
+        android:layout_alignStart="@+id/text_rect"
+        android:layout_alignTop="@+id/view_entzerren"
+        android:layout_centerVertical="true"
+       
+         
+        android:layout_toEndOf="@+id/view_entzerren"
+        android:layout_toRightOf="@+id/view_entzerren"
+        android:text="@string/deskewing_help_crop"
+        android:textColor="@android:color/white" />
+
+    <ImageView
+        android:id="@+id/view_rect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/view_entzerren"
+        android:layout_alignEnd="@+id/view_entzerren"
+        android:layout_alignRight="@+id/view_entzerren"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="0dp"
+        android:contentDescription="@string/deskewing_desc_corner_image"
+        android:src="@drawable/entzerrung_corner" />
+
+    <TextView
+        android:id="@+id/text_rect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/view_rect"
+        android:layout_marginLeft="15dp"
+       
+        android:layout_marginStart="0dp"
+        android:layout_toEndOf="@+id/view_rect"
+        android:layout_toRightOf="@+id/view_rect"
+        android:text="@string/deskewing_help_corner_image"
+        android:textColor="@android:color/white" />
+
+    <ImageView
+        android:id="@+id/view_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/view_entzerren"
+        android:layout_alignRight="@+id/view_entzerren"
+        android:layout_below="@+id/view_entzerren"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:contentDescription="@string/deskewing_desc_continue"
+        android:src="@drawable/ic_action_done" />
+
+    <TextView
+        android:id="@+id/text_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/text_entzerren"
+        android:layout_alignStart="@+id/text_entzerren"
+        android:layout_alignTop="@+id/view_ok"
+        android:layout_below="@+id/text_entzerren"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/view_ok"
+        android:layout_toRightOf="@+id/view_ok"
+        android:text="@string/deskewing_help_continue"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

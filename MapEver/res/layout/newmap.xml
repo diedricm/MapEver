@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="250dp"
+    android:layout_height="135dp"
+    android:layout_gravity="center"
+    android:background="#424242" >
+
+    <TextView
+        android:id="@+id/pop_up_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/filechooser"
+        android:layout_centerHorizontal="true"
+        android:text="@string/new_map_popup_header"
+        android:textColor="#C5EFE8"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/filechooser_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/pop_up_header"
+        android:layout_alignRight="@+id/pop_up_header"
+        android:layout_below="@+id/filechooser"
+        android:layout_marginEnd="34dp"
+        android:layout_marginRight="34dp"
+        android:text="@string/new_map_filechooser_label_text"
+        android:textColor="#C5EFE8"
+        android:textSize="15sp" />
+
+    <ImageButton
+        android:id="@+id/filechooser"
+        android:layout_width="55dp"
+        android:layout_height="59dp"
+        android:layout_alignLeft="@+id/filechooser_label"
+        android:layout_alignStart="@+id/filechooser_label"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/ic_action_collection"
+        android:contentDescription="@string/new_map_desc_filechooser"
+        android:scaleType="matrix" />
+
+    <ImageButton
+        android:id="@+id/camera"
+        android:layout_width="65dp"
+        android:layout_height="60dp"
+        android:layout_above="@+id/camera_label"
+        android:layout_alignLeft="@+id/pop_up_header"
+        android:layout_alignStart="@+id/pop_up_header"
+        android:layout_alignTop="@+id/filechooser"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/ic_action_camera"
+        android:contentDescription="@string/new_map_desc_camera"
+        android:scaleType="matrix" />
+
+    <TextView
+        android:id="@+id/camera_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/filechooser_label"
+        android:layout_alignBottom="@+id/filechooser_label"
+        android:layout_alignLeft="@+id/camera"
+        android:layout_alignStart="@+id/camera"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/new_map_camera_label_text"
+        android:textColor="#C5EFE8"
+        android:textSize="15sp" />
+
+</RelativeLayout>

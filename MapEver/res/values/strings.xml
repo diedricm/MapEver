@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
+
+    <!-- //// GENERAL //// -->
+
+    <string name="app_name">MapEver</string>
+
+    <!-- Actions and menu entries -->
+    <string name="action_settings">Settings</string>
+    <string name="action_about">About</string>
+    <string name="action_quick_help">Help</string>
+    <string name="action_debugmode_mockgps">(Debug) Mock GPS</string>
+    <string name="action_load_testmap">Load test map</string>
+    <string name="action_load_testmap_short">Test map</string>
+    <string name="action_rename_map">Rename map</string>
+    <string name="action_show_corners">With/without deskewing</string>
+
+    <!-- Activity titles -->
+    <string name="title_activity_deskew">Deskew image</string>
+    <string name="title_activity_navigation">Navigation</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- General error messages -->
+    <string name="general_error_title">Error</string>
+    <string name="error_outofmemory">Out of system memory!</string>
+    <string name="error_filenotfound">File not found!</string>
+    <string name="error_io">Error during read/write!</string>
+
+    <!-- //// START, NEW MAP //// -->
+    <!-- Context menu -->
+    <string name="start_context_rename">Rename map</string>
+    <string name="start_context_rename_success">Map has been renamed!</string>
+    <string name="start_context_delete">Delete map</string>
+    <string name="start_context_delete_confirmation_msg">Do you really want to delete this map?</string>
+
+    <!-- Start Help -->
+    <string name="start_help_text">Touch this button to create a new map.</string>
+    <string name="start_help_text_2">Touching the thumbnails will load a previously created map.</string>
+    <string name="start_desc_new_map">Buttons for creating a new map</string>
+
+    <!-- New map popup -->
+    <string name="new_map_popup_header">Create new map from&#8230;</string>
+    <string name="new_map_camera_label_text">Camera</string>
+    <string name="new_map_filechooser_label_text">Galery</string>
+    <string name="new_map_desc_camera">Button for taking a picture</string>
+    <string name="new_map_desc_filechooser">Button for loading an image</string>
+    <string name="new_map_copy_error">Could not copy image file!</string>
+
+    <!-- //// CAMERA //// -->
+
+    <string name="camera_activity_desc_preview">Preview image</string>
+    <string name="camera_activity_take_picture_button_txt">Take a photo</string>
+    <string name="camera_activity_confirm_button_txt">Confirm</string>
+    <!-- TODO replace with default yes no? -->
+    <string name="camera_activity_cancel_button_txt">Cancel</string>
+
+    <!-- //// DESKEWING //// -->
+
+    <string name="deskewing_loading">Deskewing of image is taking place&#8230;</string>
+    <string name="deskewing_error_invalidcorners">Invalid arrangement of corners!</string>
+    <string name="deskewing_error_deskewfailure">Deskewing failed!</string>
+    <string name="deskewing_imagetype_not_supported">Image type is not supported to be deskewed!</string>
+
+    <!-- ContentDescriptions of images -->
+    <string name="deskewing_desc_do_deskew">Button for deskewing the image</string>
+    <string name="deskewing_desc_continue">Button for accepting the current image</string>
+    <string name="deskewing_desc_corner_image">Image of selection corner</string>
+
+    <!-- Help -->
+    <string name="deskewing_help_continue">Push this button if you are satisfied with the current image.</string>
+    <string name="deskewing_help_corner_image">Frame the map with the crosses.</string>
+    <string name="deskewing_help_crop">Push this button in the Action Bar to show or hide the selection corners.</string>
+
+    <!-- //// NAVIGATION //// -->
+
+    <string name="navigation_map_not_found">Map could not be loaded!</string>
+    <string name="navigation_image_not_found">Map could not be loaded because image file was not found!</string>
+    <string name="navigation_gps_activation_popup_question">Activate GPS?</string>
+
+    <!-- Renaming the map -->
+    <string name="navigation_rename_map">Rename map</string>
+    <string name="navigation_rename_map_cancel">Back</string>
+    <string name="navigation_rename_map_rename">Rename</string>
+
+    <!-- Toast texts -->
+    <string name="navigation_toast_refpoint_already_set_for_this_position">A reference point at this position already exists!</string>
+    <string name="navigation_toast_refpoint_out_of_boundaries">You cannot place a reference point outside the image!</string>
+    <string name="navigation_toast_no_gpsfix_yet">Please wait for GPS data.</string>
+    <string name="navigation_toast_set_refpoint_prompt">Please place %d more reference points.</string>
+
+    <!-- ContentDescriptions of images -->
+    <string name="navigation_desc_set_refpoint">Button for placing reference points</string>
+    <string name="navigation_desc_accept_refpoint">Button for accepting a placed reference point</string>
+    <string name="navigation_desc_cancel_refpoint">Button for discarding a placed reference point</string>
+    <string name="navigation_desc_delete_refpoint">Button for deleting a selected reference point</string>
+    <string name="navigation_desc_track_position">Button to activate position tracking</string>
+    <string name="navigation_desc_location">Shows the users current position.</string>
+    <string name="navigation_desc_refpoint">This is a reference point.</string>
+
+    <!-- Help -->
+    <string name="navigation_help_set_refpoint">Push this button to place a reference point.</string>
+    <string name="navigation_help_location">This represents your position on the map.</string>
+    <string name="navigation_help_refpoint">This is a placed reference point.</string>
+    <string name="navigation_help_mark_refpoint">Please mark your current position on the map.</string>
+    <string name="navigation_help_accept_refpoint">Push this button for accepting a placed reference point.</string>
+    <string name="navigation_help_cancel_refpoint">Push this button for discarding a placed reference point.</string>
+    <string name="navigation_help_delete_refpoint">Push this button for deleting a selected reference point.</string>
+
+    <!-- Constants -->
+    <string name="navigation_const_name_of_unnamed_maps">unnamed map</string>
+
+    <!-- //// ABOUT //// -->
+    <string name="aboutus_title">MapEver</string>
+    <string name="aboutus_rights_reserved">All rights reserved.</string>
+    <string name="aboutus_copyright">© 2015 MapEver Developer Group</string>
+    <string name="aboutus_lehrstuhl">Computer Engineering Group</string>
+    <string name="aboutus_version">Version 1.0</string>
+    <string name="aboutus_project">A project at Humboldt University Berlin</string>
+
+    <!-- //// SETTINGS //// -->
+    <!-- Categories -->
+    <string name="pref_cat_general">General</string>
+    <string name="pref_cat_developers">Developer settings</string>
+
+    <!-- General: Quick help -->
+    <string name="pref_title_quick_help">Quick help</string>
+    <string name="pref_sum_quick_help_on">A help button is shown in the Action Bar.</string>
+    <string name="pref_sum_quick_help_off">Help can be found in the menu.</string>
+
+    <!-- General: Corner detection camera -->
+    <string name="pref_title_cdCamera">Camera with corner detection</string>
+    <string name="pref_sum_cdCamera_on">A camera with a preview for the automatical corner detection will be used.</string>
+    <string name="pref_sum_cdCamera_off">The system camera will be used (corners will still be detected at descewing).</string>
+
+    <!-- General: LIV Multitouch -->
+    <string name="pref_title_liv_multitouch">Deskewing: Corner multitouch</string>
+    <string name="pref_sum_liv_multitouch_on">Multiple corners can be dragged simultaneously.</string>
+    <string name="pref_sum_liv_multitouch_off">Only one corner can be dragged at a time.</string>
+
+    <!-- Developers: Debug mode -->
+    <string name="pref_title_debugmode">Debug mode</string>
+    <string name="pref_sum_debugmode">Enables debug mode. (Only for experts!)</string>
+
+    <!-- SUBMENU: LDM Options -->
+    <string name="pref_sub_ldm">Positioning fine adjustment</string>
+    <string name="pref_sub_ldm_sum">Parameters for the Image Position Locator can be fine tuned here. (Only for experts!)</string>
+
+    <!-- TODO LDM options......... -->
+
+
+    <!-- Developers: Git repository -->
+    <string name="pref_title_git_repo">Git repository</string>
+    <string name="pref_sum_git_repo">Opens git repository on Github. TODO public repo!!</string>
+
+</resources>

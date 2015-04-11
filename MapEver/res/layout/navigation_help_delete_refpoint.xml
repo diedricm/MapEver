@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#AA000000"
+        android:contentDescription="@null" />
+
+    <TextView
+        android:id="@+id/delete_refpoint_help_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/navigation_help_delete_refpoint"
+        android:textColor="@android:color/white" />
+
+    <ImageButton
+        android:id="@+id/delete_refpoint_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/delete_refpoint_help_text"
+        android:layout_toStartOf="@+id/delete_refpoint_help_text"
+        android:contentDescription="@string/navigation_desc_delete_refpoint"
+        android:src="@drawable/ic_action_delete" />
+
+</RelativeLayout>

@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    tools:context="de.hu_berlin.informatik.spws2014.mapever.entzerrung.Entzerren" >
+
+    <de.hu_berlin.informatik.spws2014.mapever.entzerrung.EntzerrungsView
+        android:id="@+id/entzerrungsview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <ImageButton
+        android:id="@+id/entzerrung_ok_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="false"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/deskewing_desc_continue"
+        android:minHeight="50dp"
+        android:minWidth="150dp"
+        android:onClick="onClick_EntzerrungOk"
+        android:src="@drawable/ic_action_crop" />
+
+</RelativeLayout>

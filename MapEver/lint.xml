@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="UnusedAttribute">
+        <ignore path="AndroidManifest.xml" />
+        <ignore path="res/layout/activity_navigation.xml" />
+    </issue>
+</lint>

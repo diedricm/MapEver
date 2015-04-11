@@ -1,0 +1,68 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- === GENERAL === -->
+    <PreferenceCategory android:title="@string/pref_cat_general" >
+
+        <!-- QUICK HELP -->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_quick_help"
+            android:summaryOff="@string/pref_sum_quick_help_off"
+            android:summaryOn="@string/pref_sum_quick_help_on"
+            android:title="@string/pref_title_quick_help" />
+
+        <!-- CORNER DETECTOR CAMERA -->
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_cdCamera"
+            android:summaryOff="@string/pref_sum_cdCamera_off"
+            android:summaryOn="@string/pref_sum_cdCamera_on"
+            android:title="@string/pref_title_cdCamera" />
+
+        <!-- MULTITOUCH -->
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_liv_multitouch"
+            android:summaryOff="@string/pref_sum_liv_multitouch_off"
+            android:summaryOn="@string/pref_sum_liv_multitouch_on"
+            android:title="@string/pref_title_liv_multitouch" />
+    </PreferenceCategory>
+
+    <!-- === DEVELOPER SETTINGS === -->
+    <PreferenceCategory android:title="@string/pref_cat_developers" >
+
+        <!-- DEBUG MODE -->
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_debugmode"
+            android:summary="@string/pref_sum_debugmode"
+            android:title="@string/pref_title_debugmode" />
+
+        <!-- [[[ LDM OPTIONS ]]] -->
+        <!--
+        <PreferenceScreen
+            android:key="pref_ldm"
+            android:summary="@string/pref_sub_ldm_sum"
+            android:title="@string/pref_sub_ldm" >
+
+            TODO
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:key="pref_gps_on_start"
+                android:summaryOff="todotodo"
+                android:summaryOn="blubb"
+                android:title="TODO" />
+        </PreferenceScreen>
+        -->
+
+        <Preference
+            android:summary="@string/pref_sum_git_repo"
+            android:title="@string/pref_title_git_repo" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/LockeFromTheBlock/sp-android/" />
+            <!-- TODO PUBLIC REPOSITORY! -->
+        </Preference>
+    </PreferenceCategory>
+
+</PreferenceScreen>

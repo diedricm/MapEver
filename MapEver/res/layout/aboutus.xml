@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#424242" >
+
+    <TextView
+        android:id="@+id/aboutus_projekt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aboutus_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="@string/aboutus_project"
+        android:textColor="#C5EFE8"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/aboutus_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aboutus_projekt"
+        android:layout_centerHorizontal="true"
+        android:text="@string/aboutus_version"
+        android:textColor="#C5EFE8" />
+
+    <TextView
+        android:id="@+id/aboutus_lehrstuhl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aboutusicon"
+        android:layout_centerHorizontal="true"
+        android:text="@string/aboutus_lehrstuhl"
+        android:textColor="#C5EFE8" />
+
+    <TextView
+        android:id="@+id/aboutus_copyright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aboutus_lehrstuhl"
+        android:layout_centerHorizontal="true"
+        android:text="@string/aboutus_copyright"
+        android:textColor="#C5EFE8" />
+
+    <ImageView
+        android:id="@+id/aboutusicon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/aboutus_version"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/aboutus_rights_reserved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aboutus_copyright"
+        android:layout_centerHorizontal="true"
+        android:text="@string/aboutus_rights_reserved"
+        android:textColor="#C5EFE8" />
+
+    <TextView
+        android:id="@+id/aboutus_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/aboutus_title"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#C5EFE8"
+        android:textSize="35sp" />
+
+</RelativeLayout>
