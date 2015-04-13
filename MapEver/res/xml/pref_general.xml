@@ -60,8 +60,7 @@
             android:title="@string/pref_title_git_repo" >
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://github.com/LockeFromTheBlock/sp-android/" />
-            <!-- TODO PUBLIC REPOSITORY! -->
+                android:data="https://github.com/diedricm/MapEver" />
         </Preference>
     </PreferenceCategory>
 

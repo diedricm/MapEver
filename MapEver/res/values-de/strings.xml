@@ -149,6 +149,6 @@
 
     <!-- Developers: Git repository -->
     <string name="pref_title_git_repo">Git-Repository</string>
-    <string name="pref_sum_git_repo">Öffnet das Git-Repository dieser App auf Github. TODO public repo!!</string>
+    <string name="pref_sum_git_repo">Öffnet das Git-Repository dieser App auf Github</string>
 
 </resources>

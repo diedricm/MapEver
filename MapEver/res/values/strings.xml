@@ -150,6 +150,6 @@
 
     <!-- Developers: Git repository -->
     <string name="pref_title_git_repo">Git repository</string>
-    <string name="pref_sum_git_repo">Opens git repository on Github. TODO public repo!!</string>
+    <string name="pref_sum_git_repo">Opens git repository on Github</string>
 
 </resources>
