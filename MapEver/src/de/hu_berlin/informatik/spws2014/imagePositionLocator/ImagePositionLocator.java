@@ -33,6 +33,7 @@ public class ImagePositionLocator {
 	IPLSettingsContainer settings;
 	
 	private ArrayList<ProjectionTriangle> projs;
+	private List<Marker> markers;
 	private Point2D imageSize;
 	
 	public ImagePositionLocator(LocationDataManager inpdman, Point2D imageSize, IPLSettingsContainer settings) {
@@ -50,10 +51,67 @@ public class ImagePositionLocator {
 	 * @return new image point
 	 */
 	public Point2D getPointPosition(GpsPoint currentPosition) {
-		if (projs == null || currentPosition == null)
+		if (markers.size() <= 2) return null;
+		if (/*projs == null ||*/ currentPosition == null)
 			return null;
-		
 		System.out.println("\n\nNew Point : " + currentPosition.toString());
+		double[][] A = new double[markers.size()][3];
+		double[] bx = new double[markers.size()];
+		double[] by = new double[markers.size()];
+		for (int i = 0; i < markers.size(); i++) {
+			A[i][0] = markers.get(i).realpoint.longitude;
+			A[i][1] = markers.get(i).realpoint.latitude;
+			A[i][2] = 1;
+			bx[i] = markers.get(i).imgpoint.x;
+			by[i] = markers.get(i).imgpoint.y;
+		}
+		double[] bx3 = new double[3];
+		double[] by3 = new double[3];
+		double[][] AtWA = new double[3][3];
+		for (int i = 0; i < markers.size(); i++) {
+			bx3[0] += bx[i] * A[i][0];
+			bx3[1] += bx[i] * A[i][1];
+			bx3[2] += bx[i] * A[i][2];
+			by3[0] += by[i] * A[i][0];
+			by3[1] += by[i] * A[i][1];
+			by3[2] += by[i] * A[i][2];
+			AtWA[0][0] += A[i][0] * A[i][0];
+			AtWA[0][1] += A[i][0] * A[i][1];
+			AtWA[0][2] += A[i][0] * A[i][2];
+			AtWA[1][1] += A[i][1] * A[i][1];
+			AtWA[1][2] += A[i][1] * A[i][2];
+			AtWA[2][2] += A[i][2] * A[i][2];
+		}
+		AtWA[1][0] = AtWA[0][1];
+		AtWA[2][0] = AtWA[0][2];
+		AtWA[2][1] = AtWA[1][2];
+		double detAtWA = AtWA[0][0] * AtWA[1][1] * AtWA[2][2] +
+			AtWA[0][1] * AtWA[1][2] * AtWA[2][0] +
+			AtWA[0][2] * AtWA[1][0] * AtWA[2][1] -
+			AtWA[0][2] * AtWA[1][1] * AtWA[2][0] -
+			AtWA[1][2] * AtWA[2][1] * AtWA[0][0] -
+			AtWA[2][2] * AtWA[0][1] * AtWA[1][0];
+		double[][] inverse = new double [3][3];
+		inverse[0][0] = AtWA[1][1] * AtWA[2][2] - AtWA[1][2] * AtWA[2][1];
+		inverse[0][1] = AtWA[2][1] * AtWA[0][2] - AtWA[2][2] * AtWA[0][1];
+		inverse[0][2] = AtWA[0][1] * AtWA[1][2] - AtWA[0][2] * AtWA[1][1];
+		inverse[1][0] = AtWA[1][2] * AtWA[2][0] - AtWA[1][0] * AtWA[2][2];
+		inverse[1][1] = AtWA[2][2] * AtWA[0][0] - AtWA[2][0] * AtWA[0][2];
+		inverse[1][2] = AtWA[0][2] * AtWA[1][0] - AtWA[0][0] * AtWA[1][2];
+		inverse[2][0] = AtWA[1][0] * AtWA[2][1] - AtWA[1][1] * AtWA[2][0];
+		inverse[2][1] = AtWA[2][0] * AtWA[0][1] - AtWA[2][1] * AtWA[0][0];
+		inverse[2][2] = AtWA[0][0] * AtWA[1][1] - AtWA[0][1] * AtWA[1][0];
+		double[] coeffsx = new double[3];
+		double[] coeffsy = new double[3];
+		for (int i = 0; i < 3; i++) {
+			coeffsx[i] = inverse[i][0] * bx3[0] + inverse[i][1] * bx3[1] + inverse[i][2] * bx3[2];
+			coeffsy[i] = inverse[i][0] * by3[0] + inverse[i][1] * by3[1] + inverse[i][2] * by3[2];
+			coeffsx[i] /= detAtWA;
+			coeffsy[i] /= detAtWA;
+		}
+		if (true)
+		return new Point2D(coeffsx[0] * currentPosition.longitude + coeffsx[1] * currentPosition.latitude + coeffsx[2],
+				coeffsy[0] * currentPosition.longitude + coeffsy[1] * currentPosition.latitude + coeffsy[2]);
 		
 		FPoint2D result = new FPoint2D();
 		double sum = 0;
@@ -93,7 +151,10 @@ public class ImagePositionLocator {
 	 * Builds ProjectionTriangles from triangulated markers.
 	 * Requires OpenCV!
 	 */
-	public void newMarkerAdded(List<Marker> markers) {		
+	public void newMarkerAdded(List<Marker> markers) {
+		this.markers = markers;
+		if (true)
+		return;
 		if (markers.size() < 2) return;
 		
 		if (markers.size() == 2) {
