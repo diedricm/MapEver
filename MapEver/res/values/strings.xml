@@ -60,6 +60,7 @@
     <string name="deskewing_error_invalidcorners">Invalid arrangement of corners!</string>
     <string name="deskewing_error_deskewfailure">Deskewing failed!</string>
     <string name="deskewing_imagetype_not_supported">Image type is not supported to be deskewed!</string>
+    <string name="deskewing_opencv_not_available">OpenCV not available for deskewing!</string>
 
     <!-- ContentDescriptions of images -->
     <string name="deskewing_desc_do_deskew">Button for deskewing the image</string>

@@ -78,6 +78,7 @@ public class EntzerrungsView extends LargeImageView {
 	// InputStream zum Bild
 	private File imageFile;
 	private boolean imageTypeSupportsDeskew = true;
+	private boolean openCVLoadError = true;
 	
 	// Eckpunkte als OverlayIcons
 	private CornerIcon[] corners = new CornerIcon[CORNERS_COUNT];
@@ -199,6 +200,13 @@ public class EntzerrungsView extends LargeImageView {
 	 */
 	public boolean isImageTypeSupported() {
 		return imageTypeSupportsDeskew;
+	}
+
+	/**
+	 * Returns true, if we failed to load OpenCV
+	 */
+	public boolean isOpenCVLoadError() {
+		return openCVLoadError;
 	}
 	
 	/**
@@ -441,6 +449,15 @@ public class EntzerrungsView extends LargeImageView {
 			calcCornerDefaults();
 			return;
 		}
+		catch (UnsatisfiedLinkError e) {
+			Log.w("EntzerrungsView/calcCornersWithDetector", "OpenCV not available");
+			showCorners(false);
+			imageTypeSupportsDeskew = false;
+			openCVLoadError = true;
+			calcCornerDefaults();
+			return;
+		}
+
 		
 		// Im Fehlerfall Standardecken verwenden
 		if (corner_points == null) {
