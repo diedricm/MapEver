@@ -59,6 +59,7 @@
     <string name="deskewing_error_invalidcorners">Anordnung der Eckpunkte so nicht möglich!</string>
     <string name="deskewing_error_deskewfailure">Entzerrung fehlgeschlagen!</string>
     <string name="deskewing_imagetype_not_supported">Die Entzerrung wird für dieses Bildformat nicht unterstützt!</string>
+    <string name="deskewing_opencv_not_available">OpenCV für Entzerrung ist nicht verfügbar!</string>
 
     <!-- ContentDescriptions of images -->
     <string name="deskewing_desc_do_deskew">Button, der die Entzerrung ausführt</string>
