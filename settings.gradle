@@ -1,0 +1,2 @@
+include ':OpenCV-2.4.9-android-sdk:sdk:java'
+include ':MapEver'
