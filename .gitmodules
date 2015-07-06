@@ -1,3 +1,6 @@
 [submodule "opencv"]
 	path = opencv
 	url = https://github.com/Itseez/opencv.git
+[submodule "MapEver/src/de/hu_berlin/informatik/spws2014/ImagePositionLocator"]
+	path = MapEver/src/de/hu_berlin/informatik/spws2014/ImagePositionLocator
+	url = https://github.com/diedricm/ImagePositionLocator
