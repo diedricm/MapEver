@@ -123,7 +123,7 @@ public class Start extends BaseActivity {
 		Resources resources = getResources();
 		
 		// get a list of all maps from the databse
-		if (!TrackDB.loadDB(new File(MapEverApp.getAbsoluteFilePath("")))) {
+		if (!TrackDB.loadDB(new File(getApplicationContext().getApplicationInfo().dataDir))) {
 			Log.e("Start", "Could not start DB!");
 			System.exit(-1);
 		}
