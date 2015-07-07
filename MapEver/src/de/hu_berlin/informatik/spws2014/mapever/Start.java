@@ -60,8 +60,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import de.hu_berlin.informatik.spws2014.imagePositionLocator.TrackDB;
-import de.hu_berlin.informatik.spws2014.imagePositionLocator.TrackDBEntry;
+import de.hu_berlin.informatik.spws2014.ImagePositionLocator.TrackDB;
+import de.hu_berlin.informatik.spws2014.ImagePositionLocator.TrackDBEntry;
 import de.hu_berlin.informatik.spws2014.mapever.camera.CornerDetectionCamera;
 import de.hu_berlin.informatik.spws2014.mapever.entzerrung.Entzerren;
 import de.hu_berlin.informatik.spws2014.mapever.navigation.Navigation;

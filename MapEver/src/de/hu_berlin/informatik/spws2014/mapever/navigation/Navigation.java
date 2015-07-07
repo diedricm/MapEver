@@ -46,17 +46,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
-import de.hu_berlin.informatik.spws2014.imagePositionLocator.GpsPoint;
-import de.hu_berlin.informatik.spws2014.imagePositionLocator.ILDMIOHandler;
-import de.hu_berlin.informatik.spws2014.imagePositionLocator.IPLSettingsContainer;
-import de.hu_berlin.informatik.spws2014.imagePositionLocator.LDMIOEmpty;
-import de.hu_berlin.informatik.spws2014.imagePositionLocator.LocationDataManager;
-import de.hu_berlin.informatik.spws2014.imagePositionLocator.Marker;
-import de.hu_berlin.informatik.spws2014.imagePositionLocator.NoGpsDataAvailableException;
-import de.hu_berlin.informatik.spws2014.imagePositionLocator.Point2D;
-import de.hu_berlin.informatik.spws2014.imagePositionLocator.PointNotInImageBoundsException;
-import de.hu_berlin.informatik.spws2014.imagePositionLocator.TrackDB;
-import de.hu_berlin.informatik.spws2014.imagePositionLocator.TrackDBEntry;
+import de.hu_berlin.informatik.spws2014.ImagePositionLocator.TriangleImagePositionLocator;
+import de.hu_berlin.informatik.spws2014.ImagePositionLocator.GpsPoint;
+import de.hu_berlin.informatik.spws2014.ImagePositionLocator.ILDMIOHandler;
+import de.hu_berlin.informatik.spws2014.ImagePositionLocator.IPLSettingsContainer;
+import de.hu_berlin.informatik.spws2014.ImagePositionLocator.LDMIOEmpty;
+import de.hu_berlin.informatik.spws2014.ImagePositionLocator.LocationDataManager;
+import de.hu_berlin.informatik.spws2014.ImagePositionLocator.Marker;
+import de.hu_berlin.informatik.spws2014.ImagePositionLocator.NoGpsDataAvailableException;
+import de.hu_berlin.informatik.spws2014.ImagePositionLocator.Point2D;
+import de.hu_berlin.informatik.spws2014.ImagePositionLocator.PointNotInImageBoundsException;
+import de.hu_berlin.informatik.spws2014.ImagePositionLocator.TrackDB;
+import de.hu_berlin.informatik.spws2014.ImagePositionLocator.TrackDBEntry;
 import de.hu_berlin.informatik.spws2014.mapever.BaseActivity;
 import de.hu_berlin.informatik.spws2014.mapever.MapEverApp;
 import de.hu_berlin.informatik.spws2014.mapever.R;
@@ -557,9 +558,10 @@ public class Navigation extends BaseActivity implements LocationListener {
 		locDatManListener = new LocationDataManagerListener(this);
 		
 		// LocationDataManager initialisieren
+		Point2D imageSize = new Point2D(mapView.getImageWidth(), mapView.getImageHeight());
 		locationDataManager = new LocationDataManager(locDatManListener, iLDMIOHandler,
-				new Point2D(mapView.getImageWidth(), mapView.getImageHeight()),
-				IPLSettingsContainer.DefaultContainer);
+				imageSize,
+				new TriangleImagePositionLocator(imageSize, IPLSettingsContainer.DefaultContainer));
 		locationDataManager.refreshLastPosition();
 		
 		// ////// GELADENE REFERENZPUNKTE DARSTELLEN

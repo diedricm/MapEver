@@ -30,7 +30,7 @@ import android.widget.Toast;
 import java.io.FileNotFoundException;
 import java.util.HashSet;
 
-import de.hu_berlin.informatik.spws2014.imagePositionLocator.Point2D;
+import de.hu_berlin.informatik.spws2014.ImagePositionLocator.Point2D;
 import de.hu_berlin.informatik.spws2014.mapever.MapEverApp;
 import de.hu_berlin.informatik.spws2014.mapever.R;
 import de.hu_berlin.informatik.spws2014.mapever.largeimageview.LargeImageView;
