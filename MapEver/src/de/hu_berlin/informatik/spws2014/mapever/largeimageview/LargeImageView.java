@@ -28,6 +28,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.widget.ImageView;
@@ -631,6 +632,18 @@ public class LargeImageView extends ImageView {
 	// //////////// TOUCH AND CLICK EVENT HANDLING
 	// ////////////////////////////////////////////////////////////////////////
 	
+	// To allow zooming with keyboard (e.g. emulator)
+	@Override
+	public boolean onKeyDown(int code, KeyEvent event) {
+		if (code == KeyEvent.KEYCODE_COMMA) {
+			setZoomScale(zoomScale * 2);
+			return true;
+		} else if (code == KeyEvent.KEYCODE_PERIOD) {
+			setZoomScale(zoomScale / 2);
+			return true;
+		}
+		return super.onKeyDown(code, event);
+	}
 	// ////// MAIN ONTOUCHEVENT
 	
 	/**
