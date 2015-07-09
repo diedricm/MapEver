@@ -474,7 +474,7 @@ public class Navigation extends BaseActivity implements LocationListener {
 			// => Lade nichts aus der Datenbank, sondern benutze nichtpersistenten LDM. (Debugging)
 			iLDMIOHandler = new LDMIOEmpty();
 		} else {
-			if (!TrackDB.loadDB(new File(getApplicationContext().getApplicationInfo().dataDir))) {
+			if (!TrackDB.loadDB(new File(MapEverApp.getAbsoluteFilePath("")))) {
 				Log.e("Nav", "Could not load DB");
 				finish();
 			}
