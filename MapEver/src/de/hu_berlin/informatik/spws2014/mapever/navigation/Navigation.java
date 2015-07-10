@@ -49,8 +49,10 @@ import java.util.Random;
 import de.hu_berlin.informatik.spws2014.ImagePositionLocator.TriangleImagePositionLocator;
 import de.hu_berlin.informatik.spws2014.ImagePositionLocator.GpsPoint;
 import de.hu_berlin.informatik.spws2014.ImagePositionLocator.ILDMIOHandler;
+import de.hu_berlin.informatik.spws2014.ImagePositionLocator.ImagePositionLocator;
 import de.hu_berlin.informatik.spws2014.ImagePositionLocator.IPLSettingsContainer;
 import de.hu_berlin.informatik.spws2014.ImagePositionLocator.LDMIOEmpty;
+import de.hu_berlin.informatik.spws2014.ImagePositionLocator.LeastSquaresImagePositionLocator;
 import de.hu_berlin.informatik.spws2014.ImagePositionLocator.LocationDataManager;
 import de.hu_berlin.informatik.spws2014.ImagePositionLocator.Marker;
 import de.hu_berlin.informatik.spws2014.ImagePositionLocator.NoGpsDataAvailableException;
@@ -559,9 +561,15 @@ public class Navigation extends BaseActivity implements LocationListener {
 		
 		// LocationDataManager initialisieren
 		Point2D imageSize = new Point2D(mapView.getImageWidth(), mapView.getImageHeight());
+		ImagePositionLocator locator;
+		if (de.hu_berlin.informatik.spws2014.mapever.Settings.getPreference_leastsquares(this)) {
+			locator = new LeastSquaresImagePositionLocator();
+		} else {
+			locator = new TriangleImagePositionLocator(imageSize, IPLSettingsContainer.DefaultContainer);
+		}
 		locationDataManager = new LocationDataManager(locDatManListener, iLDMIOHandler,
 				imageSize,
-				new TriangleImagePositionLocator(imageSize, IPLSettingsContainer.DefaultContainer));
+				locator);
 		locationDataManager.refreshLastPosition();
 		
 		// ////// GELADENE REFERENZPUNKTE DARSTELLEN

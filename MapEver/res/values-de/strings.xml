@@ -137,6 +137,11 @@
     <string name="pref_sum_liv_multitouch_on">Mehrere Eckpunkte können gleichzeitig verschoben werden.</string>
     <string name="pref_sum_liv_multitouch_off">Es kann immer nur eine Ecke gleichzeitig verschoben werden.</string>
 
+    <!-- General: least squares -->
+    <string name="pref_title_leastsquares">Alternative Lokalisierungsmethode</string>
+    <string name="pref_sum_leastsquares_on">Linearer Gleichungslöser.</string>
+    <string name="pref_sum_leastsquares_off">Basierend auf OpenCV Triangulierung.</string>
+
     <!-- Developers: Debug mode -->
     <string name="pref_title_debugmode">Debug-Modus</string>
     <string name="pref_sum_debugmode">Aktiviert den Debug-Modus. (Nur für Experten!)</string>

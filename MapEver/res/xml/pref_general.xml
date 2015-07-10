@@ -26,6 +26,13 @@
             android:summaryOff="@string/pref_sum_liv_multitouch_off"
             android:summaryOn="@string/pref_sum_liv_multitouch_on"
             android:title="@string/pref_title_liv_multitouch" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_leastsquares"
+            android:summaryOff="@string/pref_sum_leastsquares_off"
+            android:summaryOn="@string/pref_sum_leastsquares_on"
+            android:title="@string/pref_title_leastsquares" />
     </PreferenceCategory>
 
     <!-- === DEVELOPER SETTINGS === -->
