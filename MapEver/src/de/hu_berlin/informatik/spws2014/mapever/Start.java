@@ -188,7 +188,7 @@ public class Start extends BaseActivity {
 				
 				// add the thumbnail of the map to the bitmapList if it exists, a dummy picture otherwise
 				if (thumbBitmap != null) {
-					bitmapList.add(BitmapFactory.decodeFile(MapEverApp.getAbsoluteFilePath(id_string)));
+					bitmapList.add(thumbBitmap);
 				}
 				else {
 					bitmapList.add(BitmapFactory.decodeResource(resources, R.drawable.map_dummy));
