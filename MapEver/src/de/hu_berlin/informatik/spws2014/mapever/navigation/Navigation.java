@@ -184,6 +184,8 @@ public class Navigation extends BaseActivity implements LocationListener {
 		
 		// Initialisieren der ben�tigten Komponenten
 		mapView = (MapView) findViewById(R.id.map);
+		mapView.setFocusable(true);
+		mapView.setFocusableInTouchMode(true);
 		
 		// Initialisieren der Buttons & Eintragen in die Liste
 		setRefPointButton = (ImageButton) findViewById(R.id.set_refpoint);
