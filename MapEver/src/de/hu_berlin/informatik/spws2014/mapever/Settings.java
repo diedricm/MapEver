@@ -26,6 +26,7 @@ public class Settings extends PreferenceActivity {
 	public static final String key_quickHelp = "pref_quick_help";
 	public static final String key_cdCamera = "pref_cdCamera";
 	public static final String key_livMultitouch = "pref_liv_multitouch";
+	public static final String key_leastsquares = "pref_leastsquares";
 	public static final String key_debugMode = "pref_debugmode";
 	
 	// Ignore deprecation warnings (there are no API 10 compatible alternatives)
@@ -64,6 +65,15 @@ public class Settings extends PreferenceActivity {
 	 */
 	public static boolean getPreference_livMultitouch(Context context) {
 		return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(key_livMultitouch, false);
+	}
+
+	/**
+	 * Returns true if least squares locator should be used
+	 * 
+	 * @param context Just use 'this'
+	 */
+	public static boolean getPreference_leastsquares(Context context) {
+		return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(key_leastsquares, false);
 	}
 	
 	/**

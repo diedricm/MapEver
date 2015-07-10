@@ -138,6 +138,11 @@
     <string name="pref_sum_liv_multitouch_on">Multiple corners can be dragged simultaneously.</string>
     <string name="pref_sum_liv_multitouch_off">Only one corner can be dragged at a time.</string>
 
+    <!-- General: least squares -->
+    <string name="pref_title_leastsquares">Alternative location algo</string>
+    <string name="pref_sum_leastsquares_on">Use linear least-squares solver.</string>
+    <string name="pref_sum_leastsquares_off">Use OpenCV triangulation based solver.</string>
+
     <!-- Developers: Debug mode -->
     <string name="pref_title_debugmode">Debug mode</string>
     <string name="pref_sum_debugmode">Enables debug mode. (Only for experts!)</string>
