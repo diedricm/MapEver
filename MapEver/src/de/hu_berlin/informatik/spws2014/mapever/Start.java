@@ -59,6 +59,8 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 import de.hu_berlin.informatik.spws2014.ImagePositionLocator.TrackDB;
 import de.hu_berlin.informatik.spws2014.ImagePositionLocator.TrackDBEntry;
@@ -84,6 +86,7 @@ public class Start extends BaseActivity {
 	
 	// image path
 	public static final String INTENT_IMAGEPATH = "de.hu_berlin.informatik.spws2014.mapever.Start.NewImagePath";
+	public static final String INTENT_EXIT = "de.hu_berlin.informatik.spws2014.mapever.Start.Exit";
 	
 	// OpenCV initialisieren
 	static {
@@ -103,6 +106,7 @@ public class Start extends BaseActivity {
 	
 	private int noMaps = 0;
 	private int screenDensitySwitch = 0;
+	private double[] intentPos = null;
 	private static int tileSize = 0;
 	private static float dens = 0;
 	
@@ -112,6 +116,25 @@ public class Start extends BaseActivity {
 		Log.d("Start", "onCreate..." + (savedInstanceState != null ? " with savedInstanceState" : ""));
 		super.onCreate(savedInstanceState);
 		
+		if (savedInstanceState == null) {
+			Intent intent = getIntent();
+			if (intent != null && intent.getBooleanExtra(INTENT_EXIT, false)) {
+				finish();
+				return;
+			}
+			if (intent != null && intent.getData() != null &&
+				intent.getData().getScheme() != null &&
+				intent.getData().getScheme().equals("geo")) {
+				String pos = intent.getData().getSchemeSpecificPart();
+				Pattern p = Pattern.compile("([+-]?\\d+(?:\\.\\d+)?),([+-]?\\d+(?:\\.\\d+)?).*");
+				Matcher m = p.matcher(pos);
+				if (m.find()) {
+					intentPos = new double[2];
+					intentPos[0] = Double.valueOf(m.group(1));
+					intentPos[1] = Double.valueOf(m.group(2));
+				}
+			}
+		}
 		PreferenceManager.setDefaultValues(this, R.xml.pref_general, false);
 		
 		layout = new FrameLayout(getBaseContext());
@@ -237,6 +260,7 @@ public class Start extends BaseActivity {
 					// Toast.makeText(Start.this, "" + position, Toast.LENGTH_SHORT).show();
 					Intent intent = new Intent(getApplicationContext(), Navigation.class);
 					intent.putExtra(Navigation.INTENT_LOADMAPID,  positionIdList.get(position).getIdentifier());
+					intent.putExtra(Navigation.INTENT_POS, intentPos);
 					startActivityForResult(intent, NAVIGATION_REQUESTCODE);
 				}
 			}
