@@ -277,7 +277,7 @@ public class Navigation extends BaseActivity implements LocationListener {
 		
 		if (intentPos != null) {
 			boolean prev = locationDataManager.setSpeedFiltering(false);
-			locationDataManager.addPoint(new GpsPoint(intentPos[0], intentPos[1], SystemClock.elapsedRealtime()));
+			locationDataManager.addPoint(new GpsPoint(intentPos[1], intentPos[0], SystemClock.elapsedRealtime()));
 			locationDataManager.setSpeedFiltering(prev);
 
 			// Change mode to set ref point
@@ -1068,7 +1068,7 @@ public class Navigation extends BaseActivity implements LocationListener {
 		Log.d("Navigation", "GPS location changed: " + lat + "� N / " + lng + "� E");
 		
 		// �bergebe der Lokalisierung den aktuellen GPS-Punkt
-		GpsPoint gpsPoint = new GpsPoint(lat, lng, SystemClock.elapsedRealtime());
+		GpsPoint gpsPoint = new GpsPoint(lng, lat, SystemClock.elapsedRealtime());
 		
 		locationDataManager.addPoint(gpsPoint);
 		
