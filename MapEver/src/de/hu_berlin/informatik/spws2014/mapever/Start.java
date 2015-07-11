@@ -770,7 +770,7 @@ public class Start extends BaseActivity {
 	
 	// returns the size of the grid's tiles in px
 	public static int getThumbnailSize() {
-		int thumbnailSize = (int) ((tileSize / 10) * dens);
+		int thumbnailSize = (int) (tileSize * dens + 0.5);
 		return thumbnailSize;
 	}
 }
