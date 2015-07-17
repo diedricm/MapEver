@@ -451,8 +451,6 @@ public class EntzerrungsView extends LargeImageView {
 		}
 		catch (UnsatisfiedLinkError e) {
 			Log.w("EntzerrungsView/calcCornersWithDetector", "OpenCV not available");
-			showCorners(false);
-			imageTypeSupportsDeskew = false;
 			openCVLoadError = true;
 			calcCornerDefaults();
 			return;
