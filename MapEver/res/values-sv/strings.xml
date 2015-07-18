@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- //// GENERAL //// -->
+
+    <string name="app_name">MapEver</string>
+
+    <!-- Actions and menu entries -->
+    <string name="action_settings">Inställningar</string>
+    <string name="action_about">Om MapEver</string>
+    <string name="action_quick_help">Hjälp</string>
+    <string name="action_debugmode_mockgps">(Debug) Mock GPS</string>
+    <string name="action_load_testmap">Ladda karta för testning</string>
+    <string name="action_load_testmap_short">Test karta</string>
+    <string name="action_rename_map">Ändra kartnamn</string>
+    <string name="action_show_corners">Med/utan utjämning</string>
+
+    <!-- Activity titles -->
+    <string name="title_activity_deskew">Utjämn bild</string>
+    <string name="title_activity_navigation">Navigation</string>
+    <string name="title_activity_settings">Inställningar</string>
+
+    <!-- General error messages -->
+    <string name="general_error_title">Fel</string>
+    <string name="error_outofmemory">Slut på minne!</string>
+    <string name="error_filenotfound">Filen hittades inte!</string>
+    <string name="error_io">Fel under läsning/skrivning!</string>
+
+    <!-- //// START, NEW MAP //// -->
+    <!-- Context menu -->
+    <string name="start_context_rename">Ändra kartnamn</string>
+    <string name="start_context_rename_success">Kartnamn har ändrats!</string>
+    <string name="start_context_delete">Ta bort karta</string>
+    <string name="start_context_delete_confirmation_msg">Vill du verkligen ta bort den här kartan?</string>
+
+    <!-- Start Help -->
+    <string name="start_help_text">Tryck här för att skapa en ny karta.</string>
+    <string name="start_help_text_2">Välj en befintlig karta genom att trycka på bilderna.</string>
+    <string name="start_desc_new_map">Knappar för att skapa en ny karta</string>
+
+    <!-- New map popup -->
+    <string name="new_map_popup_header">Skapa en ny karta genom&#8230;</string>
+    <string name="new_map_camera_label_text">Kamera</string>
+    <string name="new_map_filechooser_label_text">Gallery</string>
+    <string name="new_map_desc_camera">Knappa för att ta ett foto</string>
+    <string name="new_map_desc_filechooser">Knappa för att ladda ett bild</string>
+    <string name="new_map_copy_error">Kunde inte kopiera bildet!</string>
+
+    <!-- //// CAMERA //// -->
+
+    <string name="camera_activity_desc_preview">Förhandsgranska bildet</string>
+    <string name="camera_activity_take_picture_button_txt">Ta ett foto</string>
+    <string name="camera_activity_confirm_button_txt">Bekräfta</string>
+    <!-- TODO replace with default yes no? -->
+    <string name="camera_activity_cancel_button_txt">Avbryt</string>
+
+    <!-- //// DESKEWING //// -->
+
+    <string name="deskewing_loading">Utjämning av bildet pågår&#8230;</string>
+    <string name="deskewing_error_invalidcorners">Ogiltig placering av hörn!</string>
+    <string name="deskewing_error_deskewfailure">Utjämning fallerade!</string>
+    <string name="deskewing_imagetype_not_supported">Ingen stöd för utjämning av det här bildformatet!</string>
+    <string name="deskewing_opencv_not_available">OpenCV finns inte tillgänglig för hörndetektering!</string>
+
+    <!-- ContentDescriptions of images -->
+    <string name="deskewing_desc_do_deskew">Knapp för att starta utjämning av bildet</string>
+    <string name="deskewing_desc_continue">Knapp för att bekräfta nuvarande bildet</string>
+    <string name="deskewing_desc_corner_image">Bild för att markera hörn av utval</string>
+
+    <!-- Help -->
+    <string name="deskewing_help_continue">Tryck den här knappen om du är nöjd med hur bilden ser ut nu.</string>
+    <string name="deskewing_help_corner_image">Markera karta i bildet genom att placera hörnkryss.</string>
+    <string name="deskewing_help_crop">Tryck på den här knappen för at visa eller gömma hörn.</string>
+
+    <!-- //// NAVIGATION //// -->
+
+    <string name="navigation_map_not_found">Kunde inte ladda kartan!</string>
+    <string name="navigation_image_not_found">Kunde inte ladda kartan eftersom bildfilen kunde inte hittas!</string>
+    <string name="navigation_gps_activation_popup_question">Aktivera GPS?</string>
+
+    <!-- Renaming the map -->
+    <string name="navigation_rename_map">Ändra namn på kartan</string>
+    <string name="navigation_rename_map_cancel">Tillbaka</string>
+    <string name="navigation_rename_map_rename">Ändra namn</string>
+
+    <!-- Toast texts -->
+    <string name="navigation_toast_refpoint_already_set_for_this_position">Referenspunkt finns redan på denna plats!</string>
+    <string name="navigation_toast_refpoint_out_of_boundaries">Du kan inte placera en refernspunkt utanför bildet!</string>
+    <string name="navigation_toast_no_gpsfix_yet">Vänligast vänta på GPS.</string>
+    <string name="navigation_toast_set_refpoint_prompt">Vänligast placera %d till referenspunkter.</string>
+
+    <!-- ContentDescriptions of images -->
+    <string name="navigation_desc_set_refpoint">Knapp för att placera en referenspunkt</string>
+    <string name="navigation_desc_accept_refpoint">Knapp för att bekräfta placerat referenspunkt</string>
+    <string name="navigation_desc_cancel_refpoint">Knapp för att avbryta placering av referenspunkt</string>
+    <string name="navigation_desc_delete_refpoint">Knapp för att ta bort vald referenspunkt</string>
+    <string name="navigation_desc_track_position">Knapp för att aktivera spårning av din position</string>
+    <string name="navigation_desc_location">Visar användarens aktuella position.</string>
+    <string name="navigation_desc_refpoint">Det här är en referenspunkt.</string>
+
+    <!-- Help -->
+    <string name="navigation_help_set_refpoint">Tryck den här knappen för att placera en referenspunkt.</string>
+    <string name="navigation_help_location">Det här är din position på kartan.</string>
+    <string name="navigation_help_refpoint">Det här är en befintlig referenspunkt.</string>
+    <string name="navigation_help_mark_refpoint">Markera din nuvarande position på kartan.</string>
+    <string name="navigation_help_accept_refpoint">Tryck den här knappen för att bekräfta placerat referenspunkt.</string>
+    <string name="navigation_help_cancel_refpoint">Tryck den här knappen för att avbryta placering av referenspunkt.</string>
+    <string name="navigation_help_delete_refpoint">Tryck den här knappen för att ta bort vald referenspunkt.</string>
+
+    <!-- Constants -->
+    <string name="navigation_const_name_of_unnamed_maps">inte namngiven karta</string>
+
+    <!-- //// ABOUT //// -->
+    <string name="aboutus_title">MapEver</string>
+    <string name="aboutus_rights_reserved">All rights reserved.</string>
+    <string name="aboutus_copyright">© 2015 MapEver Developer Group</string>
+    <string name="aboutus_lehrstuhl">Computer Engineering Group</string>
+    <string name="aboutus_version">Version 1.0</string>
+    <string name="aboutus_project">A project at Humboldt University Berlin</string>
+
+    <!-- //// SETTINGS //// -->
+    <!-- Categories -->
+    <string name="pref_cat_general">Allmänt</string>
+    <string name="pref_cat_developers">Inställningar för utvecklare</string>
+
+    <!-- General: Quick help -->
+    <string name="pref_title_quick_help">Snabbhjälp</string>
+    <string name="pref_sum_quick_help_on">En hjälp knapp visas i Action Bar.</string>
+    <string name="pref_sum_quick_help_off">Help can be found in the menu.</string>
+
+    <!-- General: Corner detection camera -->
+    <string name="pref_title_cdCamera">Kamera med hörndetektering</string>
+    <string name="pref_sum_cdCamera_on">Använd kamera med förhandsgranskning av hörndetektering (kräver OpenCV).</string>
+    <string name="pref_sum_cdCamera_off">Använd systemets kamera (hörndetektering änvänds under utjämning).</string>
+
+    <!-- General: LIV Multitouch -->
+    <string name="pref_title_liv_multitouch">Utjämning: Multitouch för hörnplacering</string>
+    <string name="pref_sum_liv_multitouch_on">Flera hörn kan flyttas samtidigt.</string>
+    <string name="pref_sum_liv_multitouch_off">Bara ett hörn kan flyttas åt gången.</string>
+
+    <!-- General: least squares -->
+    <string name="pref_title_leastsquares">Alternativ method för lokalisering</string>
+    <string name="pref_sum_leastsquares_on">Use linear least-squares solver.</string>
+    <string name="pref_sum_leastsquares_off">Use OpenCV triangulation based solver.</string>
+
+    <!-- Developers: Debug mode -->
+    <string name="pref_title_debugmode">Debug mode</string>
+    <string name="pref_sum_debugmode">Enables debug mode. (Only for experts!)</string>
+
+    <!-- SUBMENU: LDM Options -->
+    <string name="pref_sub_ldm">Positioning fine adjustment</string>
+    <string name="pref_sub_ldm_sum">Parameters for the Image Position Locator can be fine tuned here. (Only for experts!)</string>
+
+    <!-- TODO LDM options......... -->
+
+
+    <!-- Developers: Git repository -->
+    <string name="pref_title_git_repo">Git repository</string>
+    <string name="pref_sum_git_repo">Opens git repository on Github</string>
+
+</resources>
