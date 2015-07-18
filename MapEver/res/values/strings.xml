@@ -130,7 +130,7 @@
 
     <!-- General: Corner detection camera -->
     <string name="pref_title_cdCamera">Camera with corner detection</string>
-    <string name="pref_sum_cdCamera_on">A camera with a preview for the automatical corner detection will be used.</string>
+    <string name="pref_sum_cdCamera_on">A camera with a preview for the automatic corner detection will be used.</string>
     <string name="pref_sum_cdCamera_off">The system camera will be used (corners will still be detected at deskewing).</string>
 
     <!-- General: LIV Multitouch -->
