@@ -95,7 +95,7 @@
     <string name="navigation_desc_cancel_refpoint">Button for discarding a placed reference point</string>
     <string name="navigation_desc_delete_refpoint">Button for deleting a selected reference point</string>
     <string name="navigation_desc_track_position">Button to activate position tracking</string>
-    <string name="navigation_desc_location">Shows the users current position.</string>
+    <string name="navigation_desc_location">Shows the user\'s current position.</string>
     <string name="navigation_desc_refpoint">This is a reference point.</string>
 
     <!-- Help -->
@@ -131,7 +131,7 @@
     <!-- General: Corner detection camera -->
     <string name="pref_title_cdCamera">Camera with corner detection</string>
     <string name="pref_sum_cdCamera_on">A camera with a preview for the automatical corner detection will be used.</string>
-    <string name="pref_sum_cdCamera_off">The system camera will be used (corners will still be detected at descewing).</string>
+    <string name="pref_sum_cdCamera_off">The system camera will be used (corners will still be detected at deskewing).</string>
 
     <!-- General: LIV Multitouch -->
     <string name="pref_title_liv_multitouch">Deskewing: Corner multitouch</string>
