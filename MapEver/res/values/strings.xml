@@ -41,7 +41,7 @@
     <!-- New map popup -->
     <string name="new_map_popup_header">Create new map from&#8230;</string>
     <string name="new_map_camera_label_text">Camera</string>
-    <string name="new_map_filechooser_label_text">Galery</string>
+    <string name="new_map_filechooser_label_text">Gallery</string>
     <string name="new_map_desc_camera">Button for taking a picture</string>
     <string name="new_map_desc_filechooser">Button for loading an image</string>
     <string name="new_map_copy_error">Could not copy image file!</string>
