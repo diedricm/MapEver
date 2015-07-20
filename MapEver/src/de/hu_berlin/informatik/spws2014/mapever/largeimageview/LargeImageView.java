@@ -30,6 +30,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.view.InputDevice;
 import android.view.ScaleGestureDetector;
 import android.widget.ImageView;
 
@@ -644,6 +645,30 @@ public class LargeImageView extends ImageView {
 		}
 		return super.onKeyDown(code, event);
 	}
+
+	// For zooming via mouse scrollwheel
+	@Override
+	public boolean onGenericMotionEvent(MotionEvent event) {
+		if ((event.getSource() & InputDevice.SOURCE_CLASS_POINTER) != 0 &&
+		    event.getAction() == MotionEvent.ACTION_SCROLL &&
+		    event.getAxisValue(MotionEvent.AXIS_VSCROLL) != 0) {
+			float factor = event.getAxisValue(MotionEvent.AXIS_VSCROLL) < 0 ? 0.90f : 1.10f;
+
+
+			// Calculate pan offsetting.
+			float focusX = (event.getX() - getWidth() / 2) / zoomScale;
+			float focusY = (event.getY() - getHeight() / 2) / zoomScale;
+			float dx = focusX * (1 - factor);
+			float dy = focusY * (1 - factor);
+			float new_x = Float.isNaN(panCenterX) ? -dx : panCenterX - dx;
+			float new_y = Float.isNaN(panCenterY) ? -dy : panCenterY - dy;
+
+			setPanZoom(new_x, new_y, zoomScale * factor);
+			return true;
+		}
+		return super.onGenericMotionEvent(event);
+	}
+
 	// ////// MAIN ONTOUCHEVENT
 	
 	/**
