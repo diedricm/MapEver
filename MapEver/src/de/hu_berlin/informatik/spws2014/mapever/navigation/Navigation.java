@@ -92,6 +92,7 @@ public class Navigation extends BaseActivity implements LocationListener {
 	 * INTENT_LOADMAPID: ID der zu ladenden Map als long
 	 */
 	public static final String INTENT_LOADMAPID = "de.hu_berlin.informatik.spws2014.mapever.navigation.Navigation.LoadMapID";
+	public static final String INTENT_POS = "de.hu_berlin.informatik.spws2014.mapever.navigation.Navigation.IntentPos";
 	
 	
 	// ////// VIEWS
@@ -121,6 +122,7 @@ public class Navigation extends BaseActivity implements LocationListener {
 	
 	// Position des Benutzers auf der Karte in Pixeln
 	private Point2D userPosition = null;
+	private double[] intentPos = null;
 	
 	// Soll die aktuelle Position verfolgt (= zentriert) werden?
 	private boolean trackPosition = false;
@@ -211,6 +213,7 @@ public class Navigation extends BaseActivity implements LocationListener {
 		
 		// ////// PARAMETER ERMITTELN UND ZUSTANDSVARIABLEN INITIALISIEREN (GGF. AUS STATE LADEN)
 		
+		intentPos = null;
 		if (savedInstanceState == null) {
 			// -- Frischer Start --
 			
@@ -226,6 +229,7 @@ public class Navigation extends BaseActivity implements LocationListener {
 			// aktuelle Position des Nutzers auf der Karte, null: noch nicht bekannt
 			userPosition = null;
 			
+			intentPos = intent.getDoubleArrayExtra(INTENT_POS);
 		}
 		else {
 			// -- Gespeicherter Zustand --
@@ -271,6 +275,14 @@ public class Navigation extends BaseActivity implements LocationListener {
 		// Initialiales update(), damit alles korrekt dargestellt wird
 		mapView.update();
 		
+		if (intentPos != null) {
+			boolean prev = setSpeedFiltering(false);
+			locationDataManager.addPoint(new GpsPoint(intentPos[0], intentPos[1], SystemClock.elapsedRealtime()));
+			setSpeedFiltering(prev);
+
+			// Change mode to set ref point
+			changeState(NavigationStates.MARK_REFPOINT);
+		}
 		// Aktuelle Position zentrieren, falls tracking aktiviert
 		if (trackPosition) {
 			trackPosition(trackPositionButton);
@@ -410,6 +422,10 @@ public class Navigation extends BaseActivity implements LocationListener {
 		// Startbildschirm aufrufen und Activity finishen
 		Intent intent = new Intent(getApplicationContext(), Start.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		if (intentPos != null) {
+			intentPos = null;
+			intent.putExtra(Start.INTENT_EXIT, true);
+		}
 		startActivity(intent);
 		finish();
 	}
@@ -978,6 +994,10 @@ public class Navigation extends BaseActivity implements LocationListener {
 					menu.findItem(R.id.action_rename_map).setVisible(true);
 				}
 				
+				if (intentPos != null) {
+					onBackPressed();
+					return;
+				}
 				break;
 			
 			default:
@@ -1027,7 +1047,7 @@ public class Navigation extends BaseActivity implements LocationListener {
 	
 	@Override
 	public void onLocationChanged(Location location) {
-		if (location == null || locationDataManager == null)
+		if (location == null || locationDataManager == null || intentPos != null)
 			return;
 		
 		// Wenn wir in RUNNING sind und wir bisher keine aktuellen Koordinaten hatten, m�ssen wir den (ausgegrauten)
