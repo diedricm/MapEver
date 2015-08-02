@@ -105,10 +105,8 @@ public class Start extends BaseActivity {
 	private boolean isContextMenuOpen = false;
 	
 	private int noMaps = 0;
-	private int screenDensitySwitch = 0;
 	private double[] intentPos = null;
 	private static int tileSize = 0;
-	private static float dens = 0;
 	
 	
 	@Override
@@ -315,100 +313,13 @@ public class Start extends BaseActivity {
 		}
 		
 		DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-		
-		// Achtung, Variablen nur bedingt sinnvoll benannt. will fix later.
-		float heightP = displayMetrics.heightPixels;
-		float widthP = displayMetrics.widthPixels;
-		float dpHeight = heightP / displayMetrics.density;
-		float dpWidth = widthP / displayMetrics.density;
-		
-		int dpiH = Math.round(dpHeight) * 10;
-		int dpiW = Math.round(dpWidth) * 10;
-		
-		
+
 		public View getView(int position, View convertView, ViewGroup parent) {
 			ImageView imageView = new ImageView(mContext);
 			
 			if (convertView == null) {
-				dens = displayMetrics.density;
-				
-				// Debug
-				System.out.println("Width: " + widthP);
-				System.out.println("Height: " + heightP);
-				
-				// sets different modes according to the screen density
-				if (dens >= 0.5 && dens < 0.75) {
-					screenDensitySwitch = 0;
-				}
-				else if (dens > 0.75 && dens <= 1.0) {
-					screenDensitySwitch = 1;
-				}
-				else if (dens > 1.0 && dens <= 1.34) {
-					screenDensitySwitch = 3;
-				}
-				else if (dens > 1.34 && dens <= 1.75) {
-					screenDensitySwitch = 4;
-				}
-				else if (dens > 1.75 && dens <= 2) {
-					screenDensitySwitch = 5;
-				}
-				else if (dens > 2.0 && dens <= 2.25) {
-					screenDensitySwitch = 5;
-				}
-				else if (dens > 2.25 && dens <= 2.5) {
-					screenDensitySwitch = 6;
-				}
-				else if (dens > 2.5 && dens <= 2.75) {
-					screenDensitySwitch = 6;
-				}
-				else if (dens > 2.75 && dens <= 3) {
-					screenDensitySwitch = 7;
-				}
-				/*
-				 * else if (dens > 3 && dens <= 3.5) {
-				 * screenDimSwitch = 8;
-				 * }
-				 */
-				else if (dens > 3) {
-					screenDensitySwitch = 8;
-				}
-				
-				// Debug
-				System.out.println("Switch " + screenDensitySwitch);
-				
-				// sets the size of the grid's tiles according to the density determined above
-				switch (screenDensitySwitch) {
-				// small
-					case 0:
-						tileSize = dpiW / 45;
-						break;
-					case 1:
-						tileSize = dpiW / 41;
-						break;
-					case 2:
-						tileSize = dpiW / 30;
-						break;
-					case 3:
-						tileSize = dpiW / 25;
-						break;
-					case 4:
-						tileSize = dpiW / 22;
-						break;
-					case 5:
-						tileSize = dpiW / 19;
-						break;
-					case 6:
-						tileSize = dpiW / 14;
-						break;
-					case 7:
-						tileSize = dpiW / 10;
-						break;
-					// large
-					case 8:
-						tileSize = dpiW / 7;
-						break;
-				}
-				
+				// About 3/4 inch seems like a good size
+				tileSize = (int)(120 * displayMetrics.density);
 				imageView.setLayoutParams(new GridView.LayoutParams(tileSize, tileSize));
 				imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 				imageView.setPadding(getPx(8), getPx(8), getPx(8), getPx(8));
@@ -770,7 +681,6 @@ public class Start extends BaseActivity {
 	
 	// returns the size of the grid's tiles in px
 	public static int getThumbnailSize() {
-		int thumbnailSize = (int) ((tileSize / 10) * dens);
-		return thumbnailSize;
+		return tileSize;
 	}
 }
