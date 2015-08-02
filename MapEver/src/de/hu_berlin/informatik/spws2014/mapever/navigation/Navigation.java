@@ -276,9 +276,9 @@ public class Navigation extends BaseActivity implements LocationListener {
 		mapView.update();
 		
 		if (intentPos != null) {
-			boolean prev = setSpeedFiltering(false);
+			boolean prev = locationDataManager.setSpeedFiltering(false);
 			locationDataManager.addPoint(new GpsPoint(intentPos[0], intentPos[1], SystemClock.elapsedRealtime()));
-			setSpeedFiltering(prev);
+			locationDataManager.setSpeedFiltering(prev);
 
 			// Change mode to set ref point
 			changeState(NavigationStates.MARK_REFPOINT);
