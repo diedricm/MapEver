@@ -114,6 +114,17 @@ public class Start extends BaseActivity {
 		Log.d("Start", "onCreate..." + (savedInstanceState != null ? " with savedInstanceState" : ""));
 		super.onCreate(savedInstanceState);
 		
+		// We do not want to have multiple instances, as that ends up with race
+		// conditions on reading/writing the data files.
+		// Using singleTask for this is simply broken.
+		// So instead forward the intent to a "clean" task if necessary
+		if (!isTaskRoot() && (getIntent().getFlags() & (Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK)) == 0) {
+			getIntent().setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+			startActivity(getIntent());
+			finish();
+			return;
+		}
+
 		if (savedInstanceState == null) {
 			Intent intent = getIntent();
 			if (intent != null && intent.getBooleanExtra(INTENT_EXIT, false)) {
